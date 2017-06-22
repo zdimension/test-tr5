@@ -1,6 +1,43 @@
 #ifndef GAME_BOX_H
 #define GAME_BOX_H
 
+enum mood_type : int {
+    BORED_MOOD = 0,
+    ATTACK_MOOD = 1,
+    ESCAPE_MOOD = 2,
+    STALK_MOOD = 3,
+};
+
+enum zone_type : int {
+    SKELLY_ZONE = 0,
+    BASIC_ZONE = 1,
+    CROC_ZONE = 2,
+    HUMAN_ZONE = 3,
+    FLYER_ZONE = 4,
+};
+
+enum target_type : int {
+    NO_TARGET = 0,
+    PRIME_TARGET = 1,
+    SECONDARY_TARGET = 2,
+};
+
+struct box_node {
+    short exit_box; // size=0, offset=0
+    unsigned short search_number; // size=0, offset=2
+    short next_expansion; // size=0, offset=4
+    short box_number; // size=0, offset=6
+};
+
+struct box_info {
+    unsigned char left; // size=0, offset=0
+    unsigned char right; // size=0, offset=1
+    unsigned char top; // size=0, offset=2
+    unsigned char bottom; // size=0, offset=3
+    short height; // size=0, offset=4
+    short overlap_index; // size=0, offset=6
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern unsigned short loops;
 extern unsigned short testclip;

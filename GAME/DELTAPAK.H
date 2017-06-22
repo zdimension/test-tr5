@@ -1,6 +1,71 @@
 #ifndef GAME_DELTAPAK_H
 #define GAME_DELTAPAK_H
 
+struct RTDECODE {
+    unsigned long length; // size=0, offset=0
+    unsigned long off; // size=0, offset=4
+    unsigned short counter; // size=0, offset=8
+    unsigned short data; // size=0, offset=10
+    unsigned char decodetype; // size=0, offset=12
+    unsigned char packmethod; // size=0, offset=13
+    unsigned short padfuck; // size=0, offset=14
+};
+
+struct ACTORME {
+    int offset; // size=0, offset=0
+    short objslot; // size=0, offset=4
+    short nodes; // size=0, offset=6
+};
+
+struct PACKNODE {
+    short xrot_run; // size=0, offset=0
+    short yrot_run; // size=0, offset=2
+    short zrot_run; // size=0, offset=4
+    short xkey; // size=0, offset=6
+    short ykey; // size=0, offset=8
+    short zkey; // size=0, offset=10
+    struct RTDECODE decode_x; // size=16, offset=12
+    struct RTDECODE decode_y; // size=16, offset=28
+    struct RTDECODE decode_z; // size=16, offset=44
+    unsigned long xlength; // size=0, offset=60
+    unsigned long ylength; // size=0, offset=64
+    unsigned long zlength; // size=0, offset=68
+    char *xpacked; // size=0, offset=72
+    char *ypacked; // size=0, offset=76
+    char *zpacked; // size=0, offset=80
+};
+
+struct NODELOADHEADER {
+    short xkey; // size=0, offset=0
+    short ykey; // size=0, offset=2
+    short zkey; // size=0, offset=4
+    short packmethod; // size=0, offset=6
+    short xlength; // size=0, offset=8
+    short ylength; // size=0, offset=10
+    short zlength; // size=0, offset=12
+};
+
+struct RESIDENT_THING {
+    char *packed_data; // size=0, offset=0
+};
+
+struct NEW_CUTSCENE {
+    short numactors; // size=0, offset=0
+    short numframes; // size=0, offset=2
+    int orgx; // size=0, offset=4
+    int orgy; // size=0, offset=8
+    int orgz; // size=0, offset=12
+    int audio_track; // size=0, offset=16
+    int camera_offset; // size=0, offset=20
+    struct ACTORME actor_data[10]; // size=80, offset=24
+};
+
+struct CUTSEQ_ROUTINES {
+    void *init_func; // size=0, offset=0
+    void *control_func; // size=0, offset=4
+    void *end_func; // size=0, offset=8
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern short temp_rotation_buffer[160];
 extern unsigned short old_lara_holster;

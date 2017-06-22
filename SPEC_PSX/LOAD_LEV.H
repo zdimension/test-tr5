@@ -1,6 +1,25 @@
 #ifndef SPEC_PSX_LOAD_LEV_H
 #define SPEC_PSX_LOAD_LEV_H
 
+struct STASHEDOBJ {
+    short clip; // size=0, offset=0
+    short numnodestodraw; // size=0, offset=2
+    struct ITEM_INFO *item; // size=144, offset=4
+    short *frmptr0; // size=0, offset=8
+};
+
+struct STASHEDDAT {
+    short *mesh; // size=0, offset=0
+    char matrix[32]; // size=32, offset=4
+};
+
+struct WATERTAB {
+    char shimmer; // size=0, offset=0
+    char choppy; // size=0, offset=1
+    unsigned char random; // size=0, offset=2
+    unsigned char abs; // size=0, offset=3
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern short atanTab[2050];
 extern long atanOctantTab[8];

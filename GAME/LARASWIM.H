@@ -1,6 +1,14 @@
 #ifndef GAME_LARASWIM_H
 #define GAME_LARASWIM_H
 
+struct SUBSUIT_INFO {
+    short XRot; // size=0, offset=0
+    short dXRot; // size=0, offset=2
+    short XRotVel; // size=0, offset=4
+    short Vel[2]; // size=4, offset=6
+    short YVel; // size=0, offset=10
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern struct SUBSUIT_INFO subsuit;
 extern char SubHitCount;

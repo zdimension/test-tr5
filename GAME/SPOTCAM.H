@@ -1,6 +1,29 @@
 #ifndef GAME_SPOTCAM_H
 #define GAME_SPOTCAM_H
 
+struct SPOTCAM {
+    long x; // size=0, offset=0
+    long y; // size=0, offset=4
+    long z; // size=0, offset=8
+    long tx; // size=0, offset=12
+    long ty; // size=0, offset=16
+    long tz; // size=0, offset=20
+    unsigned char sequence; // size=0, offset=24
+    unsigned char camera; // size=0, offset=25
+    short fov; // size=0, offset=26
+    short roll; // size=0, offset=28
+    short timer; // size=0, offset=30
+    short speed; // size=0, offset=32
+    short flags; // size=0, offset=34
+    short room_number; // size=0, offset=36
+    short pad; // size=0, offset=38
+};
+
+struct QUAKE_CAM {
+    struct GAME_VECTOR spos; // size=16, offset=0
+    struct GAME_VECTOR epos; // size=16, offset=16
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern struct QUAKE_CAM quakecam;
 extern short InitialCameraRoom;

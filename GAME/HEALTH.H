@@ -1,6 +1,11 @@
 #ifndef GAME_HEALTH_H
 #define GAME_HEALTH_H
 
+struct DISPLAYPU {
+    short life; // size=0, offset=0
+    short object_number; // size=0, offset=2
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern short CurrentPickup;
 extern short PickupVel;

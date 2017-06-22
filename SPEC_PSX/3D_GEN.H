@@ -1,6 +1,12 @@
 #ifndef SPEC_PSX_3D_GEN_H
 #define SPEC_PSX_3D_GEN_H
 
+struct VECTOR3D {
+    long x; // size=0, offset=0
+    long y; // size=0, offset=4
+    long z; // size=0, offset=8
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern struct VECTOR3D CamTgt;
 extern struct VECTOR3D CamPos;

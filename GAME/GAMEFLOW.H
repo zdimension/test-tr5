@@ -1,6 +1,32 @@
 #ifndef GAME_GAMEFLOW_H
 #define GAME_GAMEFLOW_H
 
+struct GAMEFLOW {
+    unsigned long CheatEnabled : 1; // offset=0.0
+    unsigned long LoadSaveEnabled : 1; // offset=0.1
+    unsigned long TitleEnabled : 1; // offset=0.2
+    unsigned long PlayAnyLevel : 1; // offset=0.3
+    unsigned long Language : 3; // offset=0.4
+    unsigned long DemoDisc : 1; // offset=0.7
+    unsigned long Unused : 24; // offset=1.0
+    unsigned long InputTimeout; // size=0, offset=4
+    unsigned char SecurityTag; // size=0, offset=8
+    unsigned char nLevels; // size=0, offset=9
+    unsigned char nFileNames; // size=0, offset=10
+    unsigned char Pad; // size=0, offset=11
+    unsigned short FileNameLen; // size=0, offset=12
+    unsigned short ScriptLen; // size=0, offset=14
+};
+
+struct STRINGHEADER {
+    unsigned short nStrings; // size=0, offset=0
+    unsigned short nPSXStrings; // size=0, offset=2
+    unsigned short nPCStrings; // size=0, offset=4
+    unsigned short StringWadLen; // size=0, offset=6
+    unsigned short PSXStringWadLen; // size=0, offset=8
+    unsigned short PCStringWadLen; // size=0, offset=10
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern unsigned char gfTakeaways[16];
 extern unsigned char gfPickups[16];

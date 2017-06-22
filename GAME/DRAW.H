@@ -1,6 +1,25 @@
 #ifndef GAME_DRAW_H
 #define GAME_DRAW_H
 
+struct CHANGE_STRUCT {
+    short goal_anim_state; // size=0, offset=0
+    short number_ranges; // size=0, offset=2
+    short range_index; // size=0, offset=4
+};
+
+struct RANGE_STRUCT {
+    short start_frame; // size=0, offset=0
+    short end_frame; // size=0, offset=2
+    short link_anim_num; // size=0, offset=4
+    short link_frame_num; // size=0, offset=6
+};
+
+struct door_vbuf {
+    long xv; // size=0, offset=0
+    long yv; // size=0, offset=4
+    long zv; // size=0, offset=8
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern short *SLhandPtr;
 extern short *SRhandPtr;

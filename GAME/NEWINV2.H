@@ -1,6 +1,50 @@
 #ifndef GAME_NEWINV2_H
 #define GAME_NEWINV2_H
 
+struct INVOBJ {
+    short object_number; // size=0, offset=0
+    short yoff; // size=0, offset=2
+    short scale1; // size=0, offset=4
+    short yrot; // size=0, offset=6
+    short xrot; // size=0, offset=8
+    short zrot; // size=0, offset=10
+    short flags; // size=0, offset=12
+    short objname; // size=0, offset=14
+    unsigned long meshbits; // size=0, offset=16
+};
+
+struct OBJLIST {
+    short invitem; // size=0, offset=0
+    unsigned short yrot; // size=0, offset=2
+    unsigned short bright; // size=0, offset=4
+};
+
+struct RINGME {
+    struct OBJLIST current_object_list[100]; // size=600, offset=0
+    int ringactive; // size=0, offset=600
+    int objlistmovement; // size=0, offset=604
+    int curobjinlist; // size=0, offset=608
+    int numobjectsinlist; // size=0, offset=612
+};
+
+struct AMMOLIST {
+    short invitem; // size=0, offset=0
+    short amount; // size=0, offset=2
+    unsigned short yrot; // size=0, offset=4
+};
+
+struct MENUTHANG {
+    int type; // size=0, offset=0
+    char *text; // size=0, offset=4
+};
+
+struct COMBINELIST {
+    void *combine_routine; // size=0, offset=0
+    short item1; // size=0, offset=4
+    short item2; // size=0, offset=6
+    short combined_item; // size=0, offset=8
+};
+
 /* This file was automatically generated.  Do not edit! */
 extern struct MENUTHANG current_options[3];
 extern char oldLaraBusy;
