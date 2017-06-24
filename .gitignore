@@ -1,0 +1,11 @@
+.idea/workspace.xml
+.vs/VSWorkspaceState.json
+.vs/ProjectSettings.json
+cmake-build-debug/CMakeCache.txt
+cmake-build-debug/CMakeFiles/clion-log.txt
+cmake-build-debug/CMakeFiles/cmake.check_cache
+cmake-build-debug/CMakeFiles/clion-environment.txt
+test-tr5.vcxproj
+test-tr5.vcxproj.filters
+test-tr5.sln
+.vs/slnx.sqlite
