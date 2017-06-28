@@ -1,6 +1,8 @@
 # test-tr5
 > *it's a tr5 test©®™*
 
+**edit** at steffen's request all occurences of `holy shit` have been replaced by the more formal `holy shit`
+
 basically some time ago some folks on the forums leaked a tr4-5 psx (playstation 1) sdk containing, amongst other things, alpha/beta levels, internal files, beta (psx) builds and the most interesting and useful : symbol files.
 
 ### what is a symbol file
@@ -9,7 +11,7 @@ a symbol file is a file containing symbols
 
 ### what is a symbol
 
-it's something with letters n shit
+it's something with letters n holy shit
 
 ### could you be more precise
 
@@ -36,7 +38,7 @@ because when you compile something to machine code, it's compiled to machine cod
 
 > except if your program has exported functions but no one cares
 
-so as I was saying the symbol file contains a list of functions in the executable, so that you can run the program and debug it, see in what function shit is happening, etc
+so as I was saying the symbol file contains a list of functions in the executable, so that you can run the program and debug it, see in what function holy shit is happening, etc
 
 this is very useful, because apart from making mods and things like that, you can also understand how the program works, and then in the case of tomb raider you can try understanding how the level files, etc, work and make your own engine, like [opentomb](https://github.com/opentomb/OpenTomb), [openlara](https://github.com/XProger/OpenLara/) or [edisonengine](https://github.com/stohrendorf/EdisonEngine). they are all awesome. but not enough awesomest because we haven't yet understood all of the files used by the tr games.
 
@@ -67,3 +69,22 @@ after doing that, we can say that we have a source tree that is very similar to 
 ## yes
 
 also the folder `SPEC_PC` is completely extrapolated as we don't have any info about the pc version of the game
+
+##### other node in the map files I will provide here I am using the following function naming conventions :
+- `newsub_12345` = the function **wasn't** present in the leaked psx exe and we have no info (we will need to guess)
+- `unksub_12345` = the function **was** present in the leaked psx exe but not in the symbol file, so it was already un named and we have no info
+in that case, the address (`12345`) is the address of the corresponding **existing** function in the leaked psx exe, not in the retail one
+- `sub_12345` (default name) = we haven't searched yet
+
+#### hidden category
+*this is for me because i'm too lazy to create a file for that*
+```python
+# returns default name for function at address
+genfn=lambda addr:"sub_%05X" % addr
+
+# returns a list of functions in format (addr, name)
+funcs=lambda:[(fea,GetFunctionName(fea)) for fea in Functions(SegStart(BeginEA()),SegEnd(BeginEA()))]
+
+# returns number of unnamed functions
+sum(1 for f in funcs() if f[1] == genfn(f[0]))
+```

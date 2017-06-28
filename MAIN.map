@@ -1271,6 +1271,7 @@
  0001:00076FDC       iRotPackedYXZ
  0001:0007700C       iRotSuperPackedYXZ
  0001:00077090       iTranslateXYZ
+ 0001:0007709C       iTranslateXYZ2
  0001:000771D8       iLoadMatrix
  0001:00077220       SetRotation_I
  0001:00077250       InterpolateMatrix
@@ -1283,6 +1284,7 @@
  0001:00077928       phd_GetVectorAngles
  0001:000779DC       phd_sqrt_asm
  0001:00077A40       phd_atan_asm
+ 0001:00077AE4       _exit
  0001:00077AEC       mQuickW2VMatrix
  0001:00077BD8       AlterFOV
  0001:00077C20       mRotBoundingBoxNoPersp
@@ -1347,7 +1349,7 @@
  0001:0007C1B8       ItemPushLara
  0001:0007C58C       UpdateLaraRoom
  0001:0007C608       ItemNewRoom
- 0001:0007C6E8       GenericSphereBoxCollision2
+ 0001:0007C6E8       GenericSphereBoxCollision_D2
  0001:0007C968       GetCollidedObjects
  0001:0007CE88       UpdateSky
  0001:0007CF04       AnimateItem
@@ -1370,7 +1372,7 @@
  0001:0007E830       SubDiv3
  0001:0007E8F4       SubDiv4
  0001:0007EA08       DrawClippedMesh
- 0001:0007EC6C       UnpackRGB2
+ 0001:0007EC6C       UnpackRGB_D2
  0001:0007ECDC       ultimate_clipper
  0001:0007ED50       InitGT3
  0001:0007ED78       InitGT4
@@ -1391,38 +1393,40 @@
  0001:000804E8       phd_PutPolygons_pickup
  0001:000808A4       phd_PutPolygons_train
  0001:000808A8       phd_PutPolygons_train_shade
- 0001:00080D1C       ClipXY2
+ 0001:00080D1C       ClipXY_D2
  0001:00080DD8       calc_animating_item_clip_window
- 0001:000811FC       mClipBoundingBox2
- 0001:0008139C       GetBounds2
+ 0001:000811FC       mClipBoundingBox_D2
+ 0001:0008139C       GetBounds_D3
  0001:00081468       GetFrames
+ 0001:000814D8       _notzero
+ 0001:000814FC       _exit_D2
  0001:00081504       CalcAnimatingItem_ASM
  0001:00081714       exit_draw_animating_item
  0001:00081738       exit_draw_animating_item2
  0001:00081750       stash_the_info
- 0001:000817B0       mRotX2
- 0001:00081858       mRotY2
- 0001:000818FC       mRotYXZ2
- 0001:00081918       mRotZ2
- 0001:000819CC       SetRotation2
- 0001:000819FC       mRotSuperPackedYXZ2
- 0001:00081A8C       mTranslateAbsXYZ2
- 0001:00081AB0       mTranslateXYZ2
+ 0001:000817B0       mRotX_D2
+ 0001:00081858       mRotY_D2
+ 0001:000818FC       mRotYXZ_D2
+ 0001:00081918       mRotZ_D2
+ 0001:000819CC       SetRotation_D2
+ 0001:000819FC       mRotSuperPackedYXZ_D2
+ 0001:00081A8C       mTranslateAbsXYZ_D2
+ 0001:00081AB0       mTranslateXYZ_D2
  0001:00081BBC       mmPushMatrix
  0001:00081C0C       mmPopMatrix
- 0001:00081C18       mLoadMatrix2
+ 0001:00081C18       mLoadMatrix_D2
  0001:00081C60       erk_interpolated
- 0001:00081DF4       InitInterpolation2
- 0001:00081E60       iPushMatrix2
- 0001:00081EB0       iPopMatrix2
- 0001:00081F10       iRotX2
- 0001:00081FB8       iRotY2
- 0001:0008205C       iRotZ2
- 0001:00082110       SetRotation_I2
- 0001:00082140       iRotSuperPackedYXZ2
- 0001:000821D0       iTranslateXYZ2
- 0001:000821DC       iTranslateXYZ22
- 0001:00082318       InterpolateMatrix2
+ 0001:00081DF4       InitInterpolation_D2
+ 0001:00081E60       iPushMatrix_D2
+ 0001:00081EB0       iPopMatrix_D2
+ 0001:00081F10       iRotX_D2
+ 0001:00081FB8       iRotY_D2
+ 0001:0008205C       iRotZ_D2
+ 0001:00082110       SetRotation_I_D2
+ 0001:00082140       iRotSuperPackedYXZ_D2
+ 0001:000821D0       iTranslateXYZ_D2
+ 0001:000821DC       iTranslateXYZ2_D2
+ 0001:00082318       InterpolateMatrix_D2
  0001:00082640       CalcAllAnimatingItems_ASM
  0001:0008281C       init_scratchpad
  0001:00082900       DrawAllAnimatingItems_ASM
@@ -1433,15 +1437,15 @@
  0001:0008368C       snaff_sphere_special
  0001:000836B8       load_matrix
  0001:00083700       save_matrix
- 0001:00083744       mTranslateXYZ3
- 0001:00083848       mRotX3
- 0001:000838F0       mRotY3
- 0001:00083994       mRotYXZ3
- 0001:000839B0       mRotZ3
- 0001:00083A64       SetRotation3
- 0001:00083A80       mRotSuperPackedYXZ3
- 0001:00083B00       mRotPackedYXZ2
- 0001:00083B30       phd_sqrt_asm2
+ 0001:00083744       mTranslateXYZ_D3
+ 0001:00083848       mRotX_D3
+ 0001:000838F0       mRotY_D3
+ 0001:00083994       mRotYXZ_D3
+ 0001:000839B0       mRotZ_D3
+ 0001:00083A64       SetRotation_D3
+ 0001:00083A80       mRotSuperPackedYXZ_D3
+ 0001:00083B00       mRotPackedYXZ_D2
+ 0001:00083B30       phd_sqrt_asm_D2
  0001:00083B94       jpt_83E58
  0001:00083BDC       DEL_CalcLaraMatrices_Normal_ASM
  0001:000842D4       def_83E58
@@ -1449,42 +1453,45 @@
  0001:00084350       DEL_CalcLaraMatrices_Interpolated_ASM
  0001:00084778       LL56
  0001:00084AE8       def_84694
- 0001:00084B08       mTranslateAbsXYZ3
+ 0001:00084B08       mTranslateAbsXYZ_D3
  0001:00084B30       Hardcore_mTranslateXYZ
- 0001:00084B3C       mTranslateXYZ4
- 0001:00084C40       mRotSuperPackedYXZ4
- 0001:00084CC0       mRotPackedYXZ3
- 0001:00084CEC       mRotX4
- 0001:00084D8C       mRotY4
- 0001:00084E28       mRotYXZ4
- 0001:00084E44       mRotZ4
+ 0001:00084B3C       mTranslateXYZ_D4
+ 0001:00084C40       mRotSuperPackedYXZ_D4
+ 0001:00084CC0       mRotPackedYXZ_D3
+ 0001:00084CEC       mRotX_D4
+ 0001:00084D8C       mRotY_D4
+ 0001:00084E28       mRotYXZ_D4
+ 0001:00084E44       mRotZ_D4
  0001:00084EF4       DEL_stash_both_matrices
  0001:00084F34       snaff_current_gte_matrix_V1
  0001:00084F78       DEL_restore_both_matrices
- 0001:00084FB8       mLoadMatrix3
- 0001:00084FE4       SetRotation4
- 0001:00085000       iRotX3
- 0001:000850A0       iRotY3
- 0001:0008513C       iRotYXZ2
- 0001:00085158       iRotZ3
- 0001:00085204       SetRotation_I3
- 0001:00085220       iRotSuperPackedYXZ3
- 0001:000852A0       iRotPackedYXZ2
+ 0001:00084FB8       mLoadMatrix_D3
+ 0001:00084FE4       SetRotation_D4
+ 0001:00085000       iRotX_D3
+ 0001:000850A0       iRotY_D3
+ 0001:0008513C       iRotYXZ_D2
+ 0001:00085158       iRotZ_D3
+ 0001:00085204       SetRotation_I_D3
+ 0001:00085220       iRotSuperPackedYXZ_D3
+ 0001:000852A0       iRotPackedYXZ_D2
  0001:000852CC       Hardcore_iTranslateXYZ
- 0001:000852D8       iTranslateXYZ3
- 0001:000852F8       iTranslateXYZ23
- 0001:00085414       InterpolateMatrix3
+ 0001:000852D8       iTranslateXYZ_D3
+ 0001:000852F8       iTranslateXYZ2_D3
+ 0001:00085414       InterpolateMatrix_D3
+ 0001:0008556C       _next
  0001:00085764       InterpolateArmMatrix
  0001:00085814       setup_rotation_matrix
- 0001:0008582C       GetFrames2
+ 0001:0008582C       GetFrames_D2
+ 0001:0008589C       _notzero_D2
+ 0001:000858C0       _exit_D3
  0001:000858C8       GetBestFrame
  0001:000858F8       GetBoundsAccurate
  0001:0008596C       SetLaraUnderwaterNodes
  0001:00085A58       GetLaraJointPos
  0001:00085C5C       S_SetupClutAdder
  0001:00085C68       S_CalculateLight
- 0001:0008649C       mSqrt
- 0001:00086500       mNormaliseXYZ2
+ 0001:0008649C       mSqrt_D2
+ 0001:00086500       mNormaliseXYZ_D2
  0001:000865AC       CalculateObjectLighting
  0001:0008669C       S_CalculateStaticMeshLight
  0001:0008688C       S_CalculateStaticLight
@@ -1492,6 +1499,7 @@
  0001:000868B8       S_PrintNiceShadow
  0001:00086CBC       S_PrintShadow
  0001:00086CC4       OptimiseOTagR
+ 0001:00086D0C       _next_D2
  0001:00086D1C       GetTPage
  0001:00086D58       GetClut
  0001:00086D70       DrawCircle2D
@@ -1516,7 +1524,7 @@
  0001:00088BCC       DrawAllFx
  0001:0008A444       subdiv_ripple
  0001:0008A54C       local_mTranslateAbsXYZ
- 0001:0008A674       local_mRotY2
+ 0001:0008A674       local_mRotY_D2
  0001:0008A72C       local_mRotX
  0001:0008A7E8       DrawLaserSightSprite_ASM
  0001:0008A924       DrawGunflashes
@@ -1572,7 +1580,7 @@
  0001:0008E1B8       _DelDrawSprite
  0001:0008E24C       draw_outlines
  0001:0008E438       GetSpheres
- 0001:0008E6FC       TestCollision2
+ 0001:0008E6FC       TestCollision_D2
  0001:0008E860       GetJointAbsPosition
  0001:0008EBB4       GetJointAbsPositionMatrix
  0001:0008EF00       IsRoomOutside
@@ -2185,6 +2193,7 @@
  0001:000A1A90       aD
  0001:000A1A94       aD36
  0001:000A1A9C       ProfileDraw
+ 0001:000A1AA4       SqrtTable
  0001:000A1C48       ScalarTable
  0001:000A1DD4       Matrix
  0001:000A1DD8       TorchWibble
