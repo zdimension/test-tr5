@@ -101,7 +101,10 @@ void /*reg $31*/ lara_as_uwdeath(struct ITEM_INFO *item /*reg $4*/, struct COLL_
  * C:\Projects2\Tomb5\GAME\LARASWIM.C (line 644)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ lara_as_waterroll(struct ITEM_INFO *item /*reg $4*/, struct COLL_INFO *coll /*reg $5*/);
+void /*reg $31*/ lara_as_waterroll(struct ITEM_INFO *item /*reg $4*/, struct COLL_INFO *coll /*reg $5*/)
+{
+
+}
 /*
  * Offset 0x4C900
  * C:\Projects2\Tomb5\GAME\LARASWIM.C (line 658)

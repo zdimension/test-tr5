@@ -1,7 +1,7 @@
 # test-tr5
 > *it's a tr5 test©®™*
 
-**edit** at steffen's request all occurences of `holy shit` have been replaced by the more formal `holy shit`
+**edit** at steffen's request all occurences of `shit` have been replaced by the more formal `holy shit`
 
 basically some time ago some folks on the forums leaked a tr4-5 psx (playstation 1) sdk containing, amongst other things, alpha/beta levels, internal files, beta (psx) builds and the most interesting and useful : symbol files.
 
@@ -79,6 +79,7 @@ in that case, the address (`12345`) is the address of the corresponding **existi
 #### hidden category
 *this is for me because i'm too lazy to create a file for that*
 ```python
+import idautils
 # returns default name for function at address
 genfn=lambda addr:"sub_%05X" % addr
 
@@ -87,4 +88,91 @@ funcs=lambda:[(fea,GetFunctionName(fea)) for fea in Functions(SegStart(BeginEA()
 
 # returns number of unnamed functions
 sum(1 for f in funcs() if f[1] == genfn(f[0]))
+
+# get array
+def gar(pos, len, size):  return [(idc.Byte if size == 1 else (idc.Word if size == 2 else idc.Dword))(pos+size*x) for x in range(len)]
+
+# get array in form { item, item, item}
+def garc(pos,len,size): return "{\n\t" + ", ".join([("0x%0" + str(size * 2) + "X") % y for y in gar(pos,len,size)]) + " \n};"
+
+# read ascii null terminated string, returns tuple (string, next pos)
+def readascii(pos):
+ ret=""
+ while len(ret) < 1024:
+  curc = idc.Byte(pos)
+  pos += 1
+  if curc == 0: break
+  ret += chr(curc)
+ return (ret, pos)
+
+# read ascii strings sequentially
+def garslist(pos, len):
+ sts=[]
+ for i in range(len):
+  s, pos = readascii(pos)
+  sts.append(s)
+ return sts
+
+# read an array of pointers to strings and read the strings
+def gars(pos, len):
+ sts=[]
+ for i in range(len):
+  addr = idc.Dword(pos)
+  pos += 4
+  sts.append(readascii(addr)[0])
+ return sts
+
+# gars, in C code
+def garsc(pos, len):return "{\n\t" + ", ".join(["\"" + x + "\"" for x in gars(pos, len)]) + "\n};"
+
+def garc2d(pos, len1, len2, size): return "{\n\t" + ",\n".join([("{ " + ", ".join([("0x%0" + str(size * 2) + "X") % y for y in gar(pos+i*len2*size,len2,size)]) + " }") for i in range(len1)]) + "\n};"
+
+def garc2dch(pos, len1, len2, size): return "{\n\t" + ",\n".join([("{ " + ", ".join([("'" + chr(y) + "'") for y in gar(pos+i*len2*size,len2,size)]) + " }") for i in range(len1)]) + "\n};"
+
+# get name
+def gn(ea):return [x for x in idautils.Names() if x[0]==ea][0][1]
+
+# get name (+ gp)
+def gngp(ea):
+ a=[x for x in idautils.Names() if x[0]==ea+0xa05b4]
+ if a:return a[0][1]
+ else: return gngp(0x80000000+ea) if ea<0x80000000 else "nope "+ggp(ea)
+
+def ggp(x):return "%x"%(0xa05b4+x)
+
+def getjmp(ea):
+ y=list(XrefsFrom(ea))
+ if y: return y[0].to
+ else: return 0
+def x(a):return "%x"%a
+
+def bestunimpl(unimpl):
+	exclude = lambda f: "special" in f or f in ["ClearSpidersPatch", "lara_as_climbroped"]
+	u = funcs()
+	res = []
+	for f in unimpl:
+		if not exclude(f) and any(y for y in u if y[1] == f):
+			c = list(Chunks([x[0] for x in u if x[1] == f][0]))[0]
+			if len(c) < 2: print(f + "\n" + repr(c))
+			res.append((f, c[1] - c[0]))
+	return sorted(res, key=lambda x: x[1])[::-1]
+```
+--> [::-27]
+
+
+also regex
+
+```
+(.*) (.*)\((.*)\);
+
+$1 $2($3)\n{\n\tS_Warn("[$2] - Unimplemented!\\n");\n}\n
+```
+
+
+convert struct to typedef struct
+
+```
+(?s)struct ([A-Za-z0-9_]+)(?:(?:\s*)(\/\/(?:[^\n]+)*)*)(?:\n?){([^}]+)};
+
+typedef struct\n{$3} $1; $2
 ```

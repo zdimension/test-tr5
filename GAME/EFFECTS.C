@@ -26,7 +26,10 @@ void /*reg $31*/ WaterFall(short item_number /*reg $4*/)
  * C:\Projects2\Tomb5\GAME\EFFECTS.C (line 369)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ void_effect(struct ITEM_INFO *item /*reg $4*/);
+void /*reg $31*/ void_effect(struct ITEM_INFO *item /*reg $4*/)
+{
+
+}
 /*
  * Offset 0x393D4
  * C:\Projects2\Tomb5\GAME\EFFECTS.C (line 375)

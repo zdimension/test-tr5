@@ -779,7 +779,10 @@ void /*reg $31*/ lara_as_fastfall(struct ITEM_INFO *item /*reg $5*/, struct COLL
  * C:\Projects2\Tomb5\GAME\LARA.C (line 5053)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ lara_void_func(struct ITEM_INFO *item /*reg $4*/, struct COLL_INFO *coll /*reg $5*/);
+void /*reg $31*/ lara_void_func(struct ITEM_INFO *item /*reg $4*/, struct COLL_INFO *coll /*reg $5*/)
+{
+
+}
 /*
  * Offset 0x19930
  * C:\Projects2\Tomb5\GAME\LARA.C (line 5063)

@@ -198,7 +198,10 @@ void /*reg $31*/ lara_as_climbend(struct ITEM_INFO *item /*reg $4*/, struct COLL
  * C:\Projects2\Tomb5\GAME\LARACLMB.C (line 1153)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ lara_col_climbend(struct ITEM_INFO *item /*reg $4*/, struct COLL_INFO *coll /*reg $5*/);
+void /*reg $31*/ lara_col_climbend(struct ITEM_INFO *item /*reg $4*/, struct COLL_INFO *coll /*reg $5*/)
+{
+
+}
 /*
  * Offset 0x46E38
  * C:\Projects2\Tomb5\GAME\LARACLMB.C (line 1176)

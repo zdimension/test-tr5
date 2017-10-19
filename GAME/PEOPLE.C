@@ -30,7 +30,10 @@ int /*reg $31*/ Targetable(struct ITEM_INFO *item /*reg $17*/, struct AI_info *i
  * C:\Projects2\Tomb5\GAME\PEOPLE.C (line 152)
  * Stack frame base $29, size 0
  */
-short /*reg $31*/ GunShot(long x /*reg $4*/, long y /*reg $5*/, long z /*reg $6*/, short speed /*reg $7*/, int yrot /*sp 16*/, int room_number /*sp 20*/);
+short /*reg $31*/ GunShot(long x /*reg $4*/, long y /*reg $5*/, long z /*reg $6*/, short speed /*reg $7*/, int yrot /*sp 16*/, int room_number /*sp 20*/)
+{
+
+}
 /*
  * Offset 0x50A3C
  * C:\Projects2\Tomb5\GAME\PEOPLE.C (line 184)

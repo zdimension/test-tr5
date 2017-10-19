@@ -1,0 +1,23 @@
+lara FFFB = lara.look = 0
+lara DFFF = lara.Busy = 0
+lara FFDF = isMoving = 0
+lara & 0x40 = can monkeyswing
+lara & 0x20 = is moving
+
+coll FFCF = spaz = baddiepush = 0
+coll FFDF = spaz = 0
+coll FFEF = baddiepush = 0
+0x10 = baddiepush = 1
+
+meshswap & 0xF7 = gravity_status = 0
+
+item FFF9 ou FFFB = status = 0
+item | 2 = status = 1
+item FFDF = collidable = 0
+item | 8 = gravitystatus = 1
+item FFF7 = gravitystatus = 0
+I = 0; E = 10; do { ...; I++; } while (I < E);      OU  I = 10; do { ...; I--; } while (I);
+=== for (I = 0; I < 10; I++) { ...; } 
+
+bite_offset & (1 << 17) / 0x20000 ===== obj.intelligent
+bite_offset & (1 << 16) / 0x10000 ===== obj.Loaded

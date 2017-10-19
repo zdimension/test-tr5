@@ -502,7 +502,10 @@ void /*reg $31*/ joby2_end();
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 3606)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ joby3_init();
+void /*reg $31*/ joby3_init()
+{
+
+}
 /*
  * Offset 0x2F304
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 3616)
@@ -517,7 +520,10 @@ void /*reg $31*/ joby3_control()
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 3635)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ joby3_end();
+void /*reg $31*/ joby3_end()
+{
+
+}
 /*
  * Offset 0x2F37C
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 3646)
@@ -643,7 +649,10 @@ void /*reg $31*/ joby4_end();
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 4018)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ andrea1_init();
+void /*reg $31*/ andrea1_init()
+{
+
+}
 /*
  * Offset 0x2FB58
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 4023)
@@ -1041,7 +1050,10 @@ void /*reg $31*/ andy6_control()
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5308)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ andy6_end();
+void /*reg $31*/ andy6_end()
+{
+
+}
 /*
  * Offset 0x31698
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5315)
@@ -1053,7 +1065,10 @@ void /*reg $31*/ andypew_init();
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5319)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ andypew_control();
+void /*reg $31*/ andypew_control()
+{
+
+}
 /*
  * Offset 0x316C0
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5322)
@@ -1083,7 +1098,10 @@ void /*reg $31*/ andy7_end();
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5392)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ cossack_init();
+void /*reg $31*/ cossack_init()
+{
+
+}
 /*
  * Offset 0x3178C
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5396)
@@ -1137,7 +1155,10 @@ void /*reg $31*/ andy9_end();
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5564)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ andy8_init();
+void /*reg $31*/ andy8_init()
+{
+
+}
 /*
  * Offset 0x31C3C
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5567)
@@ -1222,7 +1243,10 @@ void /*reg $31*/ joby7_end();
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5866)
  * Stack frame base $29, size 0
  */
-void /*reg $31*/ andrea4_init();
+void /*reg $31*/ andrea4_init()
+{
+
+}
 /*
  * Offset 0x323C8
  * C:\Projects2\Tomb5\GAME\DELTAPAK.C (line 5912)
