@@ -156,6 +156,22 @@ def bestunimpl(unimpl):
 			if len(c) < 2: print(f + "\n" + repr(c))
 			res.append((f, c[1] - c[0]))
 	return sorted(res, key=lambda x: x[1])[::-1]
+
+def tosign(x, size):return x if x < (2**size/2) else x-(2**size)
+
+def getmac(fcs):
+	uniq=set(fcs)
+	u = funcs()
+	res=[]
+	for f in u:
+		n = f[1]
+		if "__" in n:n=n[0:n.index("__")]
+		if n not in uniq and f[1][0] != "." and "sub_" not in f[1]:
+			c = list(Chunks([x[0] for x in u if x[1] == f[1]][0]))[0]
+			if len(c) < 2: print(f + "\n" + repr(c))
+			res.append((f[1], c[1] - c[0]))
+	return sorted(res, key=lambda x: x[1])[::-1]
+		
 ```
 --> [::-27]
 

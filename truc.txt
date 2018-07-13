@@ -8,6 +8,7 @@ coll FFCF = spaz = baddiepush = 0
 coll FFDF = spaz = 0
 coll FFEF = baddiepush = 0
 0x10 = baddiepush = 1
+coll FFFD | 5 = slopes pits = walls = 1
 
 meshswap & 0xF7 = gravity_status = 0
 
